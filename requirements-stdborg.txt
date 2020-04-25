@@ -29,3 +29,4 @@ youtube-dl
 google-api-python-client
 oauth2client
 httplib2==0.15.0
+covid
