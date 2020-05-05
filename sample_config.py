@@ -108,7 +108,7 @@ class Config(object):
     TL_MUS_STREAM_TYPES = ("MP3", "WAV", "FLAC")
     #For Github stuff
     GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
-    GIT_REOO_NAME = os.environ.get("GIT_REPO_NAME", None)
+    GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
 
 
 class Production(Config):
