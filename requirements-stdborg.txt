@@ -14,6 +14,7 @@ Pillow
 PyLyrics
 psycopg2
 pySmartDL
+pip==20.1
 python-barcode
 python-magic
 qrcode
