@@ -10,6 +10,8 @@ googletrans
 google_images_download
 gtts
 hachoir
+heroku3
+lxml
 Pillow
 PyLyrics
 psycopg2
