@@ -1,4 +1,4 @@
-"""QuotLy: Avaible commands: .qbot
+"""QuotLy: Avaible commands: .qbot .qcolour <colour code/name>
 """
 import datetime
 from telethon import events
@@ -36,3 +36,23 @@ async def _(event):
           else: 
              await event.delete()
              await event.client.send_message(event.chat_id, response.message)
+
+@borg.on(admin_cmd(pattern="qcolour ((.|\n)*)"))  # pylint:disable=E0602,W0703
+async def _(event):
+    if event.fwd_from:
+        return
+    color = event.pattern_match.group(1)
+    async with event.client.conversation(chat) as conv:
+          try:     
+              response = conv.wait_event(events.NewMessage(incoming=True,from_users=1031952739))
+              await event.client.send_message(chat, "/qcolor {}".format(color))
+              response = await response 
+          except YouBlockedUserError: 
+              await event.reply("```Please unblock me ( **@QuotLyBot** )```")
+              return
+          # Leaving as it is because of unknown error. While integrating
+          # in edit message.
+          await event.edit("**Quote Background set to** `{}`".format(color))
+          await asyncio.sleep(5)
+          await event.delete()
+
