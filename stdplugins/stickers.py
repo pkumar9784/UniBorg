@@ -29,7 +29,7 @@ from telethon.tl.types import (
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="kangsticker ?(.*)"))
+@borg.on(admin_cmd(pattern="kang ?(.*)"))
 async def _(event):
     if event.fwd_from:
         return
@@ -44,8 +44,8 @@ async def _(event):
 
     me = borg.me
     userid = borg.uid
-    packname = f"{userid}'s @UniBorg Pack"
-    packshortname = f"Uni_Borg_{userid}"  # format: Uni_Borg_userid
+    packname = f"@maxim_233's kangpack"
+    packshortname = f"Sid_kangpack23"  # format: Uni_Borg_userid
 
     is_a_s = is_it_animated_sticker(reply_message)
     file_ext_ns_ion = "@UniBorg_Sticker.png"
@@ -54,8 +54,8 @@ async def _(event):
     if is_a_s:
         file_ext_ns_ion = "AnimatedSticker.tgs"
         uploaded_sticker = await borg.upload_file(file, file_name=file_ext_ns_ion)
-        packname = f"{userid}'s @AnimatedStickersGroup"
-        packshortname = f"Uni_Borg_{userid}_as"  # format: Uni_Borg_userid
+        packname = f"Sid's animatedkangpack"
+        packshortname = f"Sid_as_kangpack"  # format: Uni_Borg_userid
     elif not is_message_image(reply_message):
         await event.edit("Invalid message type")
         return
