@@ -24,7 +24,7 @@ async def _(event):
         s_help_string = borg._plugins[splugin_name].__doc__
     else:
         s_help_string = ""
-    help_string = """{username}'s Userbot
+    help_string = """My Userbot
 Python {}
 Telethon {}
 Github repo:https://github.com/23rdmaxim/uniborg""".format(
