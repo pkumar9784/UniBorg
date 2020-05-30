@@ -1,6 +1,6 @@
 """**Know Your UniBorg**
 ◇ list of all loaded plugins
-◆ `.help`\n
+◆ `.helpme`\n
 ◇ to know Data Center
 ◆ `.dc`\n
 ◇ powered by
@@ -15,7 +15,7 @@ from telethon import events, functions, __version__
 from uniborg.util import admin_cmd
 
 
-@borg.on(admin_cmd(pattern="help ?(.*)", allow_sudo=True))  # pylint:disable=E0602
+@borg.on(admin_cmd(pattern="helpme ?(.*)", allow_sudo=True))  # pylint:disable=E0602
 async def _(event):
     if event.fwd_from:
         return
@@ -24,7 +24,7 @@ async def _(event):
         s_help_string = borg._plugins[splugin_name].__doc__
     else:
         s_help_string = ""
-    help_string = """@One_m4x1m's Userbot
+    help_string = """{username}'s Userbot
 Python {}
 Telethon {}
 Github repo:https://github.com/23rdmaxim/uniborg""".format(
