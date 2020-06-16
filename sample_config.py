@@ -111,7 +111,8 @@ class Config(object):
     #For Github stuff
     GITHUB_ACCESS_TOKEN = os.environ.get("GITHUB_ACCESS_TOKEN", None)
     GIT_REPO_NAME = os.environ.get("GIT_REPO_NAME", None)
-
+    #For Heroku Plugin
+    HEROKU_API_KEY = os.environ.get("HEROKU_API_KEY", None)
 
 class Production(Config):
     LOGGER = False
